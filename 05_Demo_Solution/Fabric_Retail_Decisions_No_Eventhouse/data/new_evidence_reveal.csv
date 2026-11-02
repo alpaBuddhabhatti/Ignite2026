@@ -1,0 +1,4 @@
+EvidenceId,EvidenceDate,StoreId,EvidenceType,Observation,Source,Confidence
+EV-001,2026-10-02,S05,CampaignAudit,Regional campaign paused 2026-09-01 to 2026-09-21,Synthetic campaign audit,Documented operational observation
+EV-002,2026-10-02,S06,CampaignAudit,Electronics campaign not launched in September,Synthetic campaign audit,Documented operational observation
+EV-003,2026-10-02,S01,InventoryAudit,Low-stock snapshot observed on 2026-09-15; month-long shortage not established,Synthetic inventory audit,Snapshot only

@@ -1,0 +1,12 @@
+DEMO 1 / FABRIC DATA AGENT
+1. Compare September 2026 electronics revenue with September 2025. Give totals, percentage change and the source tables.
+2. Which stores contributed most to the decline? Show store-level values for both years.
+3. How many stores show low inventory in the available snapshot? Can this prove that stock shortages caused the whole-month decline?
+
+DEMO 2 / FOUNDRY
+4. Investigate the electronics decline using sales, inventory, promotions and store operations. Separate verified findings from hypotheses and cite the Fabric tables.
+5. Recommend three actions for the retail manager. Do not execute anything; explain what approval would be required.
+
+DEMO 3 / NEW EVIDENCE (after running 02_reveal_new_evidence.py)
+6. Query the new_evidence table. What newly available audit observations do we have, and do they change the confidence of the earlier hypotheses?
+7. Produce a revised one-minute decision brief, noting what is still uncertain.
