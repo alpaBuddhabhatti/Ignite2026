@@ -10,3 +10,7 @@ DEMO 2 / FOUNDRY
 DEMO 3 / NEW EVIDENCE (after running 02_reveal_new_evidence.py)
 6. Query the new_evidence table. What newly available audit observations do we have, and do they change the confidence of the earlier hypotheses?
 7. Produce a revised one-minute decision brief, noting what is still uncertain.
+
+CODE INTERPRETER TEST (run in the Data Agent after enabling the Code Interpreter tool and applying 04b instructions)
+8. Retrieve September 2025 and September 2026 electronics revenue by store. Use Code Interpreter, if available, to calculate year-over-year percentage changes, rank stores by revenue decline, and create a comparison chart. Explain which results come from Fabric data and which calculations were performed by Code Interpreter.
+Verify in the tool activity that Code Interpreter was actually executed - an instruction to use the tool does not guarantee invocation.
