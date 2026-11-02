@@ -49,5 +49,4 @@ Deployed and verified on 2026-11-02:
    (`05_Demo_Solution/.../05_foundry_agent_instructions.txt`).
 2. Full stage rehearsal per `07_Validation/Preflight_Checklist.md`.
 
-> Synthetic data only — no customer data. The package does not create cloud resources
-> by itself.
+
