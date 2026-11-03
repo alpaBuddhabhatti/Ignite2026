@@ -1,16 +1,32 @@
-DEMO 1 / FABRIC DATA AGENT
-1. Compare September 2026 electronics revenue with September 2025. Give totals, percentage change and the source tables.
-2. Which stores contributed most to the decline? Show store-level values for both years.
-3. How many stores show low inventory in the available snapshot? Can this prove that stock shortages caused the whole-month decline?
+RUN ORDER
+- Sign in to the MVPsOnFabric tenant.
+- For the Fabric-only test, open the published RetailEvidence Data Agent in the Ignite2026 workspace.
+- For Foundry-only and integration tests, open Retail-Decision-Advisor version 3 in the Foundry Playground.
+- The Foundry-only test below intentionally asks for no business facts. Use the integration prompts for live retail data.
+- These are copy/paste Playground prompts, not local Python clients. 01_fabric_notebook_setup.py loads/rebuilds the Lakehouse tables; do not rerun it during the live demo unless you intend to rebuild them. Run 02_reveal_new_evidence.py only at the Demo 3 reveal.
 
-DEMO 2 / FOUNDRY
-4. Investigate the electronics decline using sales, inventory, promotions and store operations. Separate verified findings from hypotheses and cite the Fabric tables.
-5. Recommend three actions for the retail manager. Do not execute anything; explain what approval would be required.
+DEMO 1 / FABRIC DATA AGENT ALONE
+1. Compare Electronics revenue for September 2025 and September 2026. Return both totals, the dollar change, the percentage change, and the source table names. Use Revenue, not Units.
+2. Which stores contributed most to the decline? Show each store's revenue in both periods and rank by absolute decline. Include the store IDs and source tables.
+3. How many stores show low inventory in the available snapshot? State the snapshot date and explain whether this proves stock shortages caused the whole-month revenue decline.
+
+FOUNDRY-ONLY SMOKE TEST (NO FABRIC DATA)
+Paste into Retail-Decision-Advisor to test the Foundry agent without asking it for retail facts:
+"Without querying RetailEvidence or using Code Interpreter, give me a blank one-minute retail decision-brief template for investigating an electronics revenue decline. Use placeholders instead of numbers. Separate verified observations, hypotheses, unknowns, and proposed actions requiring human approval."
+
+DEMO 2 / FOUNDRY + FABRIC INTEGRATION
+Use the first prompt as a fast integration smoke test. Then send the follow-up in the same Playground conversation for the full investigation.
+
+Fast smoke test:
+"Use the connected Fabric RetailEvidence agent to compare Electronics revenue for September 2025 and September 2026. Return both totals, the dollar and percentage change, and the source table and periods. If RetailEvidence cannot be queried, say so; do not guess."
+
+Full investigation follow-up:
+"Continue the investigation using live results from RetailEvidence. Rank the stores contributing most to the revenue decline. Then examine the available inventory snapshot, promotions, and store operations. Separate verified findings from hypotheses, cite the source tables and periods, explain what the evidence cannot establish, and recommend three actions for a manager to review. Do not execute any actions."
 
 DEMO 3 / NEW EVIDENCE (after running 02_reveal_new_evidence.py)
-6. Query the new_evidence table. What newly available audit observations do we have, and do they change the confidence of the earlier hypotheses?
-7. Produce a revised one-minute decision brief, noting what is still uncertain.
+1. Query the new_evidence table. How many audit observations were found? Summarize them and say whether they change the confidence of the earlier hypotheses. Cite the source table.
+2. Produce a revised one-minute decision brief, distinguishing verified evidence, remaining uncertainty, and actions requiring human approval.
 
-CODE INTERPRETER TEST (run in the Data Agent after enabling the Code Interpreter tool and applying 04b instructions)
-8. Retrieve September 2025 and September 2026 electronics revenue by store. Use Code Interpreter, if available, to calculate year-over-year percentage changes, rank stores by revenue decline, and create a comparison chart. Explain which results come from Fabric data and which calculations were performed by Code Interpreter.
-Verify in the tool activity that Code Interpreter was actually executed - an instruction to use the tool does not guarantee invocation.
+CODE INTERPRETER TEST (optional; apply 04b instructions first)
+Retrieve September 2025 and September 2026 Electronics revenue by store from RetailEvidence. Use Code Interpreter, if available, to calculate dollar and percentage changes, rank stores by revenue decline, and create a comparison chart. Explain which results came from Fabric and which calculations were performed by Code Interpreter.
+Verify in tool activity that Code Interpreter was actually executed; an instruction to use the tool does not guarantee invocation.
